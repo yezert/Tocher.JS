@@ -71,97 +71,128 @@ function change_t_value() {
 console.log("www");
 
 function Tchangevalue(valuename, what) {
-	// console.log(event.target);
-	// var button = event.target;
-	const [change_data] = Array.from(newdata).filter((data) => {
-		console.log("data", data.innerText, "and", data.getAttribute("t-name"));
-		if (data.getAttribute("t-name") == valuename) {
-			return true;
+	const [nowdata] = Array.from(newdata).filter((nowda) => {
+		// console.log(nowda);
+		if (nowda.getAttribute("t-name") == valuename) {
+			console.log(nowda);
+			// nowda.innerText = nowda.innerText
+			nowda.innerText = what;
+			console.log(nowda.innerText);
+			change_t_value();
 		} else {
 			return false;
 		}
 	});
-	// console.log(change_data);
-	change_data.innerText = what;
-	// console.log(change_data.innerText);
-	// newdata;
-	// console.log(newdata);
-	const t_data_list = document.querySelectorAll(`*[t-value="${valuename}"]`);
-	t_data_list.forEach((x) => {
-		console.log(x, x.getAttribute("t-value"), "<<<< before");
-	});
-	t_data_list.forEach((data) => {
-		data.setAttribute("t-value", what);
-		change_t_value();
-	});
-	t_data_list.forEach((x) => {
-		console.log(x, x.getAttribute("t-value"), "<<<< after");
-	});
 }
 
 function T_operating(valuename, number) {
-	var time = 0;
-
-	if (time == 0) {
-		const [change_data] = Array.from(newdata).filter((data) => {
-			console.log("data", data.innerText, "and", data.getAttribute("t-name"));
-			if (data.getAttribute("t-name") == valuename) {
-				return true;
-			} else {
-				return false;
-			}
-		});
-		if (change_data) {
-			console.log(change_data, valuename, number, "test");
-			// change_data.innerText = change_data.innerText + operating;
-			//operating;
-			// console.log(change_data.innerText);
-			// newdata;
-			// console.log(newdata);
-			var opn = Number.parseInt(change_data.innerText) + number;
-			const t_data_list = document.querySelectorAll(`*[t-value="${valuename}"]`);
-			t_data_list.forEach((x) => {
-				console.log(x, x.getAttribute("t-value"), "<<<< before");
-			});
-			t_data_list.forEach((data) => {
-				data.setAttribute("t-value", opn);
-				change_t_value();
-			});
-			t_data_list.forEach((x) => {
-				console.log(x, x.getAttribute("t-value"), "<<<< after");
-			});
+	const [nowda] = Array.from(newdata).filter((nowda) => {
+		// console.log(nowda);
+		if (nowda.getAttribute("t-name") == valuename) {
+			console.log(nowda);
+			// nowda.innerText = nowda.innerText
+			var opn = Number.parseInt(nowda.innerText) + number;
+			nowda.innerText = opn;
+			console.log(nowda.innerText);
+			change_t_value();
+		} else {
+			return false;
 		}
-		time++;
-	} else {
-		const [change_data] = Array.from(newdata).filter((data) => {
-			console.log("data", data.innerText, "and", data.getAttribute("t-name"));
-			if (data.getAttribute("t-name") == valuename) {
-				return true;
-			} else {
-				return false;
-			}
-		});
-		if (change_data) {
-			console.log(change_data, valuename, number, "test");
-			// change_data.innerText = change_data.innerText + operating;
-			//operating;
-			// console.log(change_data.innerText);
-			// newdata;
-			// console.log(newdata);
-			const t_data_list = document.querySelectorAll(`*[t-value="${opn}"]`);
-			opn = Number.parseInt(change_data.innerText) + number;
-			t_data_list.forEach((x) => {
-				console.log(x, x.getAttribute("t-value"), "<<<< before");
-			});
-			t_data_list.forEach((data) => {
-				data.setAttribute("t-value", opn);
-				change_t_value();
-			});
-			t_data_list.forEach((x) => {
-				console.log(x, x.getAttribute("t-value"), "<<<< after");
-			});
-		}
-	}
+	});
+	// console.log(nowda);
 }
 
 change_t_value();
+
+// function old_Topn(valuename, number) {
+// 	var time = 0;
+// 	if (time == 0) {
+// 		const [change_data] = Array.from(newdata).filter((data) => {
+// 			console.log("data", data.innerText, "and", data.getAttribute("t-name"));
+// 			if (data.getAttribute("t-name") == valuename) {
+// 				return true;
+// 			} else {
+// 				return false;
+// 			}
+// 		});
+// 		if (change_data) {
+// 			console.log(change_data, valuename, number, "test");
+// 			// change_data.innerText = change_data.innerText + operating;
+// 			//operating;
+// 			// console.log(change_data.innerText);
+// 			// newdata;
+// 			// console.log(newdata);
+// 			var opn = Number.parseInt(change_data.innerText) + number;
+// 			const t_data_list = document.querySelectorAll(`*[t-value="${valuename}"]`);
+// 			t_data_list.forEach((x) => {
+// 				console.log(x, x.getAttribute("t-value"), "<<<< before");
+// 			});
+// 			t_data_list.forEach((data) => {
+// 				// data.setAttribute("t-value", opn);
+// 				change_t_value();
+// 			});
+// 			t_data_list.forEach((x) => {
+// 				console.log(x, x.getAttribute("t-value"), "<<<< after");
+// 			});
+// 		}
+// 		time++;
+// 	} else {
+// 		const [change_data] = Array.from(newdata).filter((data) => {
+// 			console.log("data", data.innerText, "and", data.getAttribute("t-name"));
+// 			if (data.getAttribute("t-name") == valuename) {
+// 				return true;
+// 			} else {
+// 				return false;
+// 			}
+// 		});
+// 		if (change_data) {
+// 			console.log(change_data, valuename, number, "test");
+// 			// change_data.innerText = change_data.innerText + operating;
+// 			//operating;
+// 			// console.log(change_data.innerText);
+// 			// newdata;
+// 			// console.log(newdata);
+// 			const t_data_list = document.querySelectorAll(`*[t-value="${opn}"]`);
+// 			opn = Number.parseInt(change_data.innerText) + number;
+// 			t_data_list.forEach((x) => {
+// 				console.log(x, x.getAttribute("t-value"), "<<<< before");
+// 			});
+// 			t_data_list.forEach((data) => {
+// 				data.setAttribute("t-value", opn);
+// 				change_t_value();
+// 			});
+// 			t_data_list.forEach((x) => {
+// 				console.log(x, x.getAttribute("t-value"), "<<<< after");
+// 			});
+// 		}
+// 	}
+// }
+
+// function oldChangevalue(valuename, what) {
+// 	console.log(event.target);
+// 	var button = event.target;
+// 	const [change_data] = Array.from(newdata).filter((data) => {
+// 		console.log("data", data.innerText, "and", data.getAttribute("t-name"));
+// 		if (data.getAttribute("t-name") == valuename) {
+// 			return true;
+// 		} else {
+// 			return false;
+// 		}
+// 	});
+// 	// console.log(change_data);
+// 	change_data.innerText = what;
+// 	// console.log(change_data.innerText);
+// 	// newdata;
+// 	// console.log(newdata);
+// 	const t_data_list = document.querySelectorAll(`*[t-value="${valuename}"]`);
+// 	t_data_list.forEach((x) => {
+// 		console.log(x, x.getAttribute("t-value"), "<<<< before");
+// 	});
+// 	t_data_list.forEach((data) => {
+// 		// data.setAttribute("t-value", what);
+// 		change_t_value();
+// 	});
+// 	t_data_list.forEach((x) => {
+// 		console.log(x, x.getAttribute("t-value"), "<<<< after");
+// 	});
+// }
