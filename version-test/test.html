@@ -2,18 +2,23 @@
 <html>
 	<head>
 		<script defer type="text/javascript" src="./core.js"></script>
+		<script defer type="script" src="./test.rs"></script>
 	</head>
 
 	<body>
 		<t-data t-name="b"> di" </t-data>
 		<t-data t-name="a"> wudi</t-data>
 		<t-data t-name="c">0</t-data>
-		<h1 class="to-js" t-value="vatu"></h1>
-		<h1 class="to-js" t-value="aaa"></h1>
-		<input class="to-js" t-value="a" />
-		<button class="to-js" t-value="b"></button>
-		<h1 class="to-js" t-value="c"></h1>
-		<button class="to-js" t-value="c" onclick="T_operating('c',1)"></button>
+		<h1 class="tos" t-value="vatu"></h1>
+		<h1 class="tos" t-value="aaa"></h1>
+		<input class="tos" t-value="a" type="text" onkeyup="oninput_str(this)" onload="element_onload(this)" />
+		<button class="tos" t-value="b"></button>
+		<h1 class="tos" t-value="dhi {c}"></h1>
+		<button class="tos" t-value="{c}" onclick="T_operating('c',1)"></button>
+		<button class="tos" t-value="a {a} {a}"></button>
+		<acom></acom>
+		<acom></acom>
+		<t-components t-name="acom"><div>111</div></t-components>
 	</body>
 
 	<!-- <!DOCTYPE html>
