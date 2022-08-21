@@ -1,4 +1,4 @@
-var to_js_list = document.getElementsByClassName("tos");
+// var to_js_list = document.getElementsByClassName("tos");
 
 const t_data_list = document.querySelectorAll("t-data");
 
@@ -25,7 +25,8 @@ var newdata = Array.from(t_data_list).map((x) => {
 // console.log(newdata);
 
 function found_t_value() {
-	const to_js_list = document.getElementsByClassName("to-js");
+	// const to_js_list = document.getElementsByClassName("to-js");
+	const to_js_list = document.querySelectorAll(`*[t-value]`);
 	Array.from(to_js_list).filter((valuename) => {
 		const t_data_collect = document.querySelectorAll("t-data");
 		const t_data_array = Array.from(t_data_collect).map((x) => ({ [x.getAttribute("t-name")]: x.innerText }));
@@ -48,8 +49,13 @@ function found_t_value() {
 					var newval = tval.replace(re, dict[k]);
 					console.log(tval, val, k, newval, "<<<", elem);
 					elem.innerText = newval;
+					elem.setAttribute("value", newval);
 					//elem.setAttribute("t-value", newval);
 					// console.log(elem, dict, "<<<elem,dict");
+				} else {
+					const disval = elem.getAttribute("t-value");
+					elem.innerText = disval;
+					elem.setAttribute("value", disval);
 				}
 			});
 	});
@@ -57,7 +63,7 @@ function found_t_value() {
 
 // console.log("www");
 
-function Tchangevalue(valuename, what) {
+function T_changevalue(valuename, what) {
 	const [nowdata] = Array.from(newdata).filter((nowda) => {
 		// console.log(nowda);
 		if (nowda.getAttribute("t-name") == valuename) {
