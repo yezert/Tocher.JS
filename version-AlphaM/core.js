@@ -157,6 +157,11 @@ function get_components() {
 			}
 		});
 
+		window.onload = () => {
+			found_t_value();
+			get_components();
+			init_compenents();
+		};
 		// // console.log(x, "<<<t-export");
 		// let target_div = t_exp.nextElementSibling;
 		// while (target_div) {
@@ -206,12 +211,6 @@ function get_components() {
 	// 	console.log(t_com_name);
 	// });
 }
-
-window.onload = () => {
-	found_t_value();
-	get_components();
-	init_compenents();
-};
 
 // encode = "aa{ddsdd}gh";
 // var re = /\{[^\}]+\}/g;
