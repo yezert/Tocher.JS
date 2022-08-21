@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script defer type="text/javascript" src="./core.js"></script>
+		<script defer type="script" src="./test.rs"></script>
+	</head>
+
+	<body>
+		<t-data t-name="b"> di" </t-data>
+		<t-data t-name="a"> wudi</t-data>
+		<t-data t-name="c">0</t-data>
+		<h1 class="tos" t-value="wudi "></h1>
+		<h1 class="tos" t-value="aaa"></h1>
+		<input class="tos" t-value="a" type="text" onkeyup="oninput_str(this)" onload="element_onload(this)" />
+		<button class="tos" t-value="br4"></button>
+		<h1 class="tos" t-value="dhi {c}"></h1>
+		<button class="tos" t-value="{c}" onclick="T_operating('c',1)"></button>
+		<button class="tos" t-value="a {a} {a}"></button>
+		<acom abcdef="aaa" wawawa="abcd" tpsd="aaa"></acom>
+		<acom abcdef="aaa"></acom>
+		<aaa vvvtr="aaadklr"></aaa>
+		<t-components t-name="acom">
+			<t-export>abcdef</t-export>
+			<t-export>wawawa</t-export>
+			<t-export>tpsd</t-export>
+			<div t-value="{abcdef}">...</div>
+			<button t-value="{wawawa}">...</button>
+			<input t-value="{tpsd}" />
+		</t-components>
+
+		<t-components t-name="aaa">
+			<t-export>vvvtr</t-export>
+			<button t-value="{vvvtr}"></button>
+		</t-components>
+	</body>
+
+	<!-- <!DOCTYPE html>
+<html>
+	<body>
+
+		<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+			Date
+		</button>
+
+		<p id="demo"></p>
+	</body>
+</html> -->
+</html>
