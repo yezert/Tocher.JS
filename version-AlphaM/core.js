@@ -31,6 +31,7 @@ var newdata = Array.from(t_data_list).map((x) => {
 // console.log(newdata);
 
 function found_t_value() {
+	// console.log("aaa");
 	// const to_js_list = document.getElementsByClassName("to-js");
 	const to_js_list = document.querySelectorAll(`*[t-value]`);
 	Array.from(to_js_list).filter((valuename) => {
@@ -53,7 +54,7 @@ function found_t_value() {
 					const val = val_matched[0];
 					const k = val.substring(1, val.length - 1); //ddsdd
 					var newval = tval.replace(re, dict[k]);
-					// console.log(tval, val, k, newval, "<<<", elem);
+					//console.log(tval, val, k, newval, "<<<", elem);
 					elem.innerText = newval;
 					elem.setAttribute("value", newval);
 					//elem.setAttribute("t-value", newval);
@@ -156,62 +157,62 @@ function get_components() {
 				}
 			}
 		});
-
-		window.onload = () => {
-			found_t_value();
-			get_components();
-			init_compenents();
-		};
-		// // console.log(x, "<<<t-export");
-		// let target_div = t_exp.nextElementSibling;
-		// while (target_div) {
-		// 	const target_tval_attr = document.querySelectorAll("t-export");
-		// 	Array.from(target_tval_attr).map((a) => {
-		// 		console.log(a, "<<<a");
-
-		// 		// const re = /\{[^\}]+\}/g;
-		// 		const attr_kstr_arr = a.innerText; // .match(re)
-		// 		console.log(attr_kstr_arr, a, "<<<attr_kstr_arr");
-		// 		if (attr_kstr_arr) {
-		// 			const attr_kstr = attr_kstr_arr;
-		// 			const kid = attr_kstr; //.substring(1, attr_kstr.length - 1);
-		// 			console.log(kid, attr_kstr);
-		// 			document.querySelectorAll(`${tct}[${kid}]`).forEach((acom) => {
-		// 				const k_val = acom.getAttribute(`${kid}`);
-		// 				// console.log(acom_val, a, k, "<<<acom[]");
-		// 				target_div.innerText = k_val;
-		// 			});
-		// 		}
-		// 	});
-
-		// 	target_div = target_div.nextElementSibling;
-		// }
 	});
-	// });
-
-	// const t_components_exs = document.querySelectorAll("t-export");
-	// // const in_c_value = t_components_list.getAttribute("t-value");
-	// const exl = Array.from(t_components_exs).map((t_ex) => {
-	// 	t_ex.display = "none";
-	// 	return t_ex.innerText;
-	// });
-
-	// console.log(exl);
-	// Array.from(t_components_list).map((t_com) => {
-	// 	const inctv = t_com.getAttribute("t-value");
-	// 	t_com.style.display = "none";
-	// 	var t_name = t_com.getAttribute("t-name");
-	// 	console.log(t_com, t_name);
-	// 	const t_com_name = document.querySelectorAll(t_name);
-	// 	Array.from(t_com_name).map((t_com_namin) => {
-	// 		t_com_namin.innerHTML = t_com.innerHTML;
-	// 		console.log(t_com_namin.innerHTML);
-	// 	});
-
-	// 	console.log(t_com_name);
-	// });
 }
+window.onload = () => {
+	found_t_value();
+	get_components();
+	init_compenents();
+};
 
+// // console.log(x, "<<<t-export");
+// let target_div = t_exp.nextElementSibling;
+// while (target_div) {
+// 	const target_tval_attr = document.querySelectorAll("t-export");
+// 	Array.from(target_tval_attr).map((a) => {
+// 		console.log(a, "<<<a");
+
+// 		// const re = /\{[^\}]+\}/g;
+// 		const attr_kstr_arr = a.innerText; // .match(re)
+// 		console.log(attr_kstr_arr, a, "<<<attr_kstr_arr");
+// 		if (attr_kstr_arr) {
+// 			const attr_kstr = attr_kstr_arr;
+// 			const kid = attr_kstr; //.substring(1, attr_kstr.length - 1);
+// 			console.log(kid, attr_kstr);
+// 			document.querySelectorAll(`${tct}[${kid}]`).forEach((acom) => {
+// 				const k_val = acom.getAttribute(`${kid}`);
+// 				// console.log(acom_val, a, k, "<<<acom[]");
+// 				target_div.innerText = k_val;
+// 			});
+// 		}
+// 	});
+
+// 	target_div = target_div.nextElementSibling;
+// }
+
+// });
+
+// const t_components_exs = document.querySelectorAll("t-export");
+// // const in_c_value = t_components_list.getAttribute("t-value");
+// const exl = Array.from(t_components_exs).map((t_ex) => {
+// 	t_ex.display = "none";
+// 	return t_ex.innerText;
+// });
+
+// console.log(exl);
+// Array.from(t_components_list).map((t_com) => {
+// 	const inctv = t_com.getAttribute("t-value");
+// 	t_com.style.display = "none";
+// 	var t_name = t_com.getAttribute("t-name");
+// 	console.log(t_com, t_name);
+// 	const t_com_name = document.querySelectorAll(t_name);
+// 	Array.from(t_com_name).map((t_com_namin) => {
+// 		t_com_namin.innerHTML = t_com.innerHTML;
+// 		console.log(t_com_namin.innerHTML);
+// 	});
+
+// 	console.log(t_com_name);
+// });
 // encode = "aa{ddsdd}gh";
 // var re = /\{[^\}]+\}/g;
 // encode = encode.match(re)[0];
