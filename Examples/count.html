@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script defer type="text/javascript" src="../version-AlphaM/core.js"></script>
+	</head>
+
+	<body>
+		<t-data t-name="count">0</t-data>
+		<button t-value="+" onclick="T_operating('count',1)"></button>
+		<text t-value="{count}"></text>
+		<button t-value="-" onclick="T_operating('count',-1)"></button>
+	</body>
+</html>
+
+<style>
+	button {
+		transition: all ease 0.25s;
+		margin: 20px;
+		opacity: 75%;
+		text-align: center;
+		font-size: 100px;
+		font-family: serif;
+		border-radius: 20px;
+		width: 150px;
+		height: 150px;
+		background-color: rgb(155, 155, 155);
+		border-width: 0ch;
+		border-bottom-width: 15px;
+		border-bottom-color: rgb(190, 190, 190);
+		border-right-width: 15px;
+		border-right-color: rgb(219, 219, 219);
+	}
+	button:hover {
+		scale: 1.25;
+	}
+	text {
+		font-size: 100px;
+		font-family: serif;
+		font-weight: 500;
+	}
+	body {
+		background-color: beige;
+		display: flex;
+		align-items: center;
+		height: 100vh;
+		justify-content: center;
+	}
+</style>
