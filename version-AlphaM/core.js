@@ -5,6 +5,7 @@ const t_data_list = document.querySelectorAll("t-data");
 const t_components_list = document.querySelectorAll("t-components");
 
 const t_components_exs = document.querySelectorAll("t-export");
+
 // alltdata.style.display = "none";
 // console.log(t_data_list);
 
@@ -130,39 +131,66 @@ function get_components() {
 	// let tct = tc.getAttribute("t-name");
 	// console.log(tct);
 	document.querySelectorAll(`t-components[t-name]`).forEach((t_comp) => {
+		console.log("[<t-components>]", t_comp);
+		// t_comp.style.display = "none";
+
 		const comp_name = t_comp.getAttribute("t-name");
 		let exports_has = {};
-		let exports_attrs = {};
 		t_comp.querySelectorAll("t-export").forEach((ex) => {
 			const k = String(ex.innerText).trim();
 			exports_has[`${k}`] = true;
 		});
-		document.querySelectorAll(`${comp_name}`).forEach((ac) => {
-			ac.getAttributeNames().forEach((a) => {
-				exports_attrs[a] = ac.getAttribute(a);
-			});
-		});
 
-		t_comp.querySelectorAll("*[t-value]").forEach((tv_elem) => {
-			const re = /\{[^\}]+\}/g;
-			const t_val = tv_elem.getAttribute("t-value");
-			const match_result = t_val.match(re);
-			console.log(t_val, match_result, tv_elem);
-			if (match_result) {
-				const [vk] = match_result;
-				const k = vk.substring(1, vk.length - 1);
-				if (exports_has[k]) {
-					tv_elem.innerText = exports_attrs[k];
-					tv_elem.setAttribute("value", exports_attrs[k]);
+		document.querySelectorAll(`${comp_name}`).forEach((comp) => {
+			let exports_attrs = {};
+			comp.getAttributeNames().forEach((a) => {
+				exports_attrs[a] = comp.getAttribute(a);
+			});
+
+			let child = t_comp.firstChild;
+			while (child) {
+				if (child.nodeType == child.ELEMENT_NODE) {
+					if (child.nodeName != "T-EXPORT") {
+						// console.log(`[[${child.nodeName}]]`, child);
+						const cloned = child.cloneNode();
+						const new_child = comp.appendChild(cloned);
+
+						const re = /\{[^\}]+\}/g;
+						const t_val = new_child.getAttribute("t-value");
+						const match_result = t_val.match(re);
+						// console.log(t_val, match_result, cc);
+						if (match_result) {
+							const [vk] = match_result;
+							const k = vk.substring(1, vk.length - 1);
+							if (exports_has[k]) {
+								new_child.innerText = t_val.replace(vk, exports_attrs[k]);
+								new_child.setAttribute("value", exports_attrs[k]);
+							}
+						}
+					}
 				}
+				child = child.nextSibling;
 			}
 		});
 	});
 }
+
+function found_t_hide() {
+	const t_hide_list = document.querySelectorAll(`*[t-hide]`);
+	Array.from(t_hide_list).map((x) => {
+		if (x.getAttribute("t-hide") == "true") {
+			x.style.display = "none";
+		} else {
+			x.style.display = "block";
+		}
+	});
+}
+
 window.onload = () => {
 	found_t_value();
 	get_components();
 	init_compenents();
+	found_t_hide();
 };
 
 // // console.log(x, "<<<t-export");
