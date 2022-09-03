@@ -1,5 +1,5 @@
 # Touch.JS 
-![icon](./assets/icon.png) ![text](assets/text.png)
+![icon](https://raw.githubusercontent.com/yezert/Touch.JS/main/assets/icon.png) ![text](https://raw.githubusercontent.com/yezert/Touch.JS/main/assets/text.png)
 
 
 
@@ -11,3 +11,20 @@
 
 
 Touch.JS references many valuable frameworks and optimizes them into them. We firmly believe that after continuous efforts, it may eventually become one of the choices for front-end development
+
+
+## What frameworks does Touch.js borrow from?
+
+Touch.JS draws on the following frameworks: 
+- #### Vue.js (more) 
+- #### React.js 
+- #### Svelte.js
+
+
+## Why doesn't Touch.JS documentation?
+
+The documentation is under development and will be placed in the source code later, and we hope you will give this project and a star and a follow-up, so that you can see the update as soon as possible in the future
+
+## What if there is no documentation?
+
+We are developing some examples that you can learn about Touch.js first. And the source code isn't particularly confusing to read, and you can also read it to learn Touch.js
