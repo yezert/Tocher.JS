@@ -21,7 +21,7 @@ Touch.JS draws on the following frameworks:
 - #### Svelte.js
 
 
-## Why doesn't Touch.JS documentation?
+## Why is there no documentation for Touch.JS?
 
 The documentation is under development and will be placed in the source code later, and we hope you will give this project and a star and a follow-up, so that you can see the update as soon as possible in the future
 

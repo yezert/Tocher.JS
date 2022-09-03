@@ -193,6 +193,16 @@ function found_t_if() {
 	const t_if_list = document.querySelectorAll(`t-if`);
 	Array.from(t_if_list).map((x) => {
 		const logic = x.getAttribute("t-logic");
+		const ratio = x.getAttribute("t-ratio");
+		const ratio2 = x.getAttribute("t-ratios");
+
+		if (logic == ">") {
+			if (parseInt(ratio) > parseInt(ratio2)) {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
 	});
 }
 
