@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script defer type="text/javascript" src="./core.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<t-data t-name="count">0</t-data>
+		</div>
+		<div>
+			<button t-value="+" onclick="T_operating('count',1)"></button>
+			<a t-value="{count}"></a>
+			<button t-value="-" onclick="T_operating('count',-1)"></button>
+		</div>
+	</body>
+</html>
+
+<style>
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		flex-direction: row;
+	}
+</style>
