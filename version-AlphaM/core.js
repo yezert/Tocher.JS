@@ -15,6 +15,9 @@ function init_compenents() {
 	Array.from(t_components_exs).map((at) => {
 		at.style.display = "none";
 	});
+	Array.from(t_components_list).map((at) => {
+		at.style.display = "none";
+	});
 }
 var newdata = Array.from(t_data_list).map((x) => {
 	//let tcvalue = alltjs.getAttribute("tocher-value");
@@ -183,6 +186,13 @@ function found_t_hide() {
 		} else {
 			x.style.display = "block";
 		}
+	});
+}
+
+function found_t_if() {
+	const t_if_list = document.querySelectorAll(`t-if`);
+	Array.from(t_if_list).map((x) => {
+		const logic = x.getAttribute("t-logic");
 	});
 }
 
