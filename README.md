@@ -1,7 +1,7 @@
 # Touch.JS 
 ![icon](https://raw.githubusercontent.com/yezert/Touch.JS/main/assets/icon.png) ![text](https://raw.githubusercontent.com/yezert/Touch.JS/main/assets/text.png)
 
-
+# Touch.JS 
 
 ![version](https://img.shields.io/badge/version-alpha--m--1.0.4-%2340966f%20?style=flat)
 
