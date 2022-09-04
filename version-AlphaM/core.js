@@ -83,7 +83,8 @@ function T_changevalue(valuename, what) {
 			// nowda.innerText = nowda.innerText
 			nowda.innerText = what;
 			// console.log(nowda.innerText);
-			found_t_value(valuename);
+			found_t_value();
+			found_t_if();
 		} else {
 			return false;
 		}
@@ -100,6 +101,7 @@ function T_operating(valuename, number) {
 			nowda.innerText = opn;
 			// console.log(nowda.innerText);
 			found_t_value();
+			found_t_if();
 		} else {
 			return false;
 		}
@@ -134,7 +136,7 @@ function get_components() {
 	// let tct = tc.getAttribute("t-name");
 	// console.log(tct);
 	document.querySelectorAll(`t-components[t-name]`).forEach((t_comp) => {
-		console.log("[<t-components>]", t_comp);
+		// console.log("[<t-components>]", t_comp);
 		// t_comp.style.display = "none";
 
 		const comp_name = t_comp.getAttribute("t-name");
@@ -193,24 +195,53 @@ function found_t_if() {
 	const t_if_list = document.querySelectorAll(`t-if`);
 	Array.from(t_if_list).map((x) => {
 		const logic = x.getAttribute("t-logic");
-		const ratio = x.getAttribute("t-ratio");
-		const ratio2 = x.getAttribute("t-ratios");
+		let ratio = x.getAttribute("t-ratio");
+		let ratio2 = x.getAttribute("t-ratios");
+		const tdata = document.querySelectorAll("t-data");
+		Array.from(tdata).map((y) => {
+			// console.log(ratio, ratio2, x, y.innerText, y.getAttribute("t-name"));
 
-		if (logic == ">") {
-			if (parseInt(ratio) > parseInt(ratio2)) {
-				x.style.display = "block";
-			} else {
-				x.style.display = "none";
+			if (ratio == y.getAttribute("t-name")) {
+				ratio = y.innerText;
 			}
-		}
+			if (ratio2 == y.getAttribute("t-name")) {
+				ratio2 = y.innerText;
+				// console.log(y.innerText);
+			}
+			// console.log("dhi", ratio, ratio2);
+			if (logic == ">") {
+				if (parseInt(ratio) > parseInt(ratio2)) {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			} else if (logic == "<") {
+				if (parseInt(ratio) < parseInt(ratio2)) {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			} else if (logic == "=") {
+				if (parseInt(ratio) === parseInt(ratio2)) {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			}
+		});
 	});
 }
 
-window.onload = () => {
+function init() {
 	found_t_value();
 	get_components();
 	init_compenents();
 	found_t_hide();
+	found_t_if();
+}
+
+window.onload = () => {
+	init();
 };
 
 // // console.log(x, "<<<t-export");

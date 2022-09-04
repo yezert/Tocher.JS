@@ -10,7 +10,7 @@
 	<body>
 		<t-data t-name="b"> di" </t-data>
 		<t-data t-name="a"> wudi</t-data>
-		<t-data t-name="c">0</t-data>
+		<t-data t-name="c">4</t-data>
 		<t-data t-name="d"></t-data>
 		<h1 t-value="wudi "></h1>
 		<h1 t-value="aaa"></h1>
@@ -36,8 +36,11 @@
 
 			<button t-value="this is {ghi}"></button>
 		</t-components>
-		<div></div>
-		<button>222</button>
+		<t-if t-ratio="c" t-logic="=" t-ratios="4">
+			<h1 class="jied">aaa</h1>
+		</t-if>
+
+		<button onclick="T_changevalue('c','5')">222</button>
 	</body>
 
 	<!-- <!DOCTYPE html>
