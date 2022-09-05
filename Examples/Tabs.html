@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script defer type="text/javascript" src="../version-AlphaM/core.js"></script>
+	</head>
+
+	<body>
+		<t-data t-name="tabs">0</t-data>
+
+		<button onclick="T_changevalue('tabs','0')">1</button>
+		<button onclick="T_changevalue('tabs','1')">2</button>
+		<button onclick="T_changevalue('tabs','2')">3</button>
+
+		<t-if t-ratio="tabs" t-logic="=" t-ratios="0">
+			<h1>Touch.JS VeryGood</h1>
+			<h3>Wow</h3>
+			<h2>Made by t-if</h2>
+		</t-if>
+		<t-if t-ratio="tabs" t-logic="=" t-ratios="1">
+			<h1>Use Touch.JS!</h1>
+			<h3>Good</h3>
+			<h2>Made by t-if</h2>
+		</t-if>
+		<t-if t-ratio="tabs" t-logic="=" t-ratios="2">
+			<h1>t-if is push!</h1>
+			<h3>Let's go</h3>
+			<h2>Made by t-if</h2>
+		</t-if>
+	</body>
+</html>
+
+<style>
+	button {
+		transition: all ease 0.25s;
+		margin: 20px;
+		opacity: 75%;
+		text-align: center;
+		font-size: 100px;
+		font-family: serif;
+		border-radius: 20px;
+		width: 150px;
+		height: 150px;
+		background-color: rgb(155, 155, 155);
+		border-width: 0ch;
+		border-bottom-width: 15px;
+		border-bottom-color: rgb(190, 190, 190);
+		border-right-width: 15px;
+		border-right-color: rgb(219, 219, 219);
+	}
+	button:hover {
+		scale: 1.25;
+	}
+</style>
