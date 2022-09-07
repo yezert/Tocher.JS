@@ -5,7 +5,7 @@
 
 ![version](https://img.shields.io/badge/version-alpha--m--1.0.4-%2340966f%20?style=flat)
 
-### A framework for original HTML , Javascript and Css
+### A framework for HTML , Javascript and Css
 
 ## Why Tocher?
 
