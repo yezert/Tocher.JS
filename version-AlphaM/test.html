@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<script defer type="text/javascript" src="./core.js"></script>
+
 		<script>
 			let a = ["1", "2", "3"];
 		</script>
@@ -22,7 +23,7 @@
 		<!-- <acom abcdef="aaa" wawawa="abcd" tpsd="aaa"></acom>
 		<acom abcdef="aaa" wawawa="aaa" tpsd="aaa"></acom> -->
 		<aaa vvvtr="aaadklr"></aaa>
-		<wek ghi="aas"></wek>
+		<wek ghi="4"></wek>
 		<t-components t-name="acom" t-hide="true">
 			<t-export>abcdef</t-export>
 			<t-export>wawawa</t-export>
@@ -35,12 +36,19 @@
 			<t-export>ghi</t-export>
 
 			<button t-value="this is {ghi}"></button>
+			<t-if t-ratio="ghi" t-logic="=" t-ratios="4">
+				<h1 class="jied">aaa</h1>
+			</t-if>
 		</t-components>
 		<t-if t-ratio="c" t-logic="=" t-ratios="4">
 			<h1 class="jied">aaa</h1>
 		</t-if>
 
 		<button onclick="T_changevalue('c','5')">222</button>
+
+		<t-map t-name="l" t-list="abc;bcd;">
+			<a>1</a>
+		</t-map>
 	</body>
 
 	<!-- <!DOCTYPE html>

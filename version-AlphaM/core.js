@@ -12,10 +12,10 @@ const t_components_exs = document.querySelectorAll("t-export");
 var data = "";
 
 function init_compenents() {
-	Array.from(t_components_exs).map((at) => {
+	t_components_exs.forEach((at) => {
 		at.style.display = "none";
 	});
-	Array.from(t_components_list).map((at) => {
+	t_components_list.forEach((at) => {
 		at.style.display = "none";
 	});
 }
@@ -45,11 +45,8 @@ function found_t_value() {
 		let dict = Object.assign({}, ...t_data_array);
 
 		const t_values = document.querySelectorAll(`*[t-value]`);
-		Array.from(t_values)
-			// .filter((elem) => {
-			// 	const tval = elem.getAttribute("t-value");
-			// 	return tval.includes(`{${valuename.getAttribute("")}}`);
-			// })
+		t_values
+			// .filter((elem) => { const tval = elem.getAttribute("t-value");return tval.includes(`{${valuename.getAttribute("")}}`);})
 			.forEach((elem) => {
 				const tval = elem.getAttribute("t-value");
 				var re = /\{[^\}]+\}/g;
@@ -141,6 +138,7 @@ function get_components() {
 
 		const comp_name = t_comp.getAttribute("t-name");
 		let exports_has = {};
+		const tex = t_comp.querySelectorAll("t-export");
 		t_comp.querySelectorAll("t-export").forEach((ex) => {
 			const k = String(ex.innerText).trim();
 			exports_has[`${k}`] = true;
@@ -160,18 +158,21 @@ function get_components() {
 						const cloned = child.cloneNode();
 						const new_child = comp.appendChild(cloned);
 
-						const re = /\{[^\}]+\}/g;
 						const t_val = new_child.getAttribute("t-value");
-						const match_result = t_val.match(re);
-						// console.log(t_val, match_result, cc);
-						if (match_result) {
-							const [vk] = match_result;
-							const k = vk.substring(1, vk.length - 1);
-							if (exports_has[k]) {
-								new_child.innerText = t_val.replace(vk, exports_attrs[k]);
-								new_child.setAttribute("value", exports_attrs[k]);
+						if (t_val) {
+							const re = /\{[^\}]+\}/g;
+							const match_result = t_val.match(re);
+							// console.log(t_val, match_result, cc);
+							if (match_result) {
+								const [vk] = match_result;
+								const k = vk.substring(1, vk.length - 1);
+								if (exports_has[k]) {
+									new_child.innerText = t_val.replace(vk, exports_attrs[k]);
+									new_child.setAttribute("value", exports_attrs[k]);
+								}
 							}
 						}
+					} else if (child.nodeName == "T-IF") {
 					}
 				}
 				child = child.nextSibling;
@@ -232,7 +233,29 @@ function found_t_if() {
 	});
 }
 
+function found_t_map() {
+	var t_map_list = document.querySelectorAll(`t-map`);
+
+	Array.from(t_map_list).map((x) => {
+		var name = x.getAttribute("t-name");
+
+		var things = x.getAttribute("t-list");
+
+		var lists = things.split(";");
+		console.log(lists, lists.length);
+		var othings = x.childNodes;
+		lists.map((y) => {
+			console.log(othings);
+			othings.forEach((z) => {
+				console.log(z);
+				x.appendChild(z);
+			});
+		});
+	});
+}
+
 function init() {
+	found_t_map();
 	found_t_value();
 	get_components();
 	init_compenents();
@@ -260,7 +283,7 @@ window.onload = () => {
 // 			console.log(kid, attr_kstr);
 // 			document.querySelectorAll(`${tct}[${kid}]`).forEach((acom) => {
 // 				const k_val = acom.getAttribute(`${kid}`);
-// 				// console.log(acom_val, a, k, "<<<acom[]");
+// 				// console.log(acom_val, a, k, "<<<acom[]"); 3 9pl.'/
 // 				target_div.innerText = k_val;
 // 			});
 // 		}
