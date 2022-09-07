@@ -28,3 +28,22 @@ The documentation is under development and will be placed in the source code lat
 ## What if there is no documentation?
 
 We are developing some examples that you can learn about Tocher.js first. And the source code isn't particularly confusing to read, and you can also read it to learn Tocher.js
+
+# Download
+
+### use npm and nodejs :
+
+```
+npm i tocherjs
+```
+
+### use unpkg link:
+
+```html
+<script src="https://unpkg.com/tocherjs@0.0.4/release/index.js"></script>
+```
+
+### use jsdelivr link :
+```html
+<script src="https://cdn.jsdelivr.net/npm/tocherjs@0.0.4/release/index.js"></script>
+```
