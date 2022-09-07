@@ -1,0 +1,18 @@
+{
+  "name": "tocherjs",
+  "version": "0.0.4",
+  "description": "A framework for html,js,css",
+  "main": "./release/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gh-yezert:yezert/Touch.JS.git"
+  },
+  "keywords": [
+    "tocherjs"
+  ],
+  "author": "yezert",
+  "license": "ISC"
+}
