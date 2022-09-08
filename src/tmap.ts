@@ -15,6 +15,4 @@ export function found_t_map() {
 			console.log(y);
 		});
 	});
-
-	console.log("hello found_t_map");
 }
