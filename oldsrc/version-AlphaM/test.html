@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script defer type="text/javascript" src="./core.js"></script>
+
+		<script>
+			let a = ["1", "2", "3"];
+		</script>
+	</head>
+
+	<body>
+		<t-data t-name="b"> di" </t-data>
+		<t-data t-name="a"> wudi</t-data>
+		<t-data t-name="c">4</t-data>
+		<t-data t-name="d"></t-data>
+		<h1 t-value="wudi "></h1>
+		<h1 t-value="aaa"></h1>
+		<input t-value="a" type="text" onkeyup="oninput_str(this)" onload="element_onload(this)" />
+		<button t-value="br4"></button>
+		<h1 t-value="dhi {c}"></h1>
+		<button t-value="{c}" onclick="T_operating('c',1)"></button>
+		<button t-value="a {a} {a} {a}"></button>
+		<!-- <acom abcdef="aaa" wawawa="abcd" tpsd="aaa"></acom>
+		<acom abcdef="aaa" wawawa="aaa" tpsd="aaa"></acom> -->
+		<aaa vvvtr="aaadklr"></aaa>
+		<wek ghi="4"></wek>
+		<t-components t-name="acom" t-hide="true">
+			<t-export>abcdef</t-export>
+			<t-export>wawawa</t-export>
+			<t-export>tpsd</t-export>
+			<div t-value="id {abcdef}">...</div>
+			<button t-value="{wawawa}">...</button>
+			<input t-value="{tpsd}" />
+		</t-components>
+		<t-components t-name="wek" t-hide="true">
+			<t-export>ghi</t-export>
+
+			<button t-value="this is {ghi}"></button>
+			<t-if t-ratio="ghi" t-logic="=" t-ratios="4">
+				<h1 class="jied">aaa</h1>
+			</t-if>
+		</t-components>
+		<t-if t-ratio="c" t-logic="=" t-ratios="4">
+			<h1 class="jied">aaa</h1>
+		</t-if>
+
+		<button onclick="T_changevalue('c','5')">222</button>
+
+		<t-map t-name="l" t-list="abc,bcd">
+			<a>1</a>
+			<a>2</a>
+		</t-map>
+	</body>
+
+	<!-- <!DOCTYPE html>
+<html>
+	<body>
+
+		<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+			Date
+		</button>
+
+		<p id="demo"></p>
+	</body>
+</html> -->
+</html>
