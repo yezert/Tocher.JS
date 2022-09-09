@@ -1,8 +1,7 @@
 {
   "name": "tocherjs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A framework for html,js,css",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +19,6 @@
     "@swc/core": "^1.2.249",
     "browserslist": "^4.21.3",
     "typescript": "^4.8.2"
-  }
+  },
+  "dependencies": {}
 }
