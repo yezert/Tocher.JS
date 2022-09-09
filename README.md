@@ -40,10 +40,10 @@ npm i tocherjs
 ### use unpkg link:
 
 ```html
-<script src="https://unpkg.com/tocherjs@0.0.4/release/index.js" defer></script>
+<script src="https://unpkg.com/tocherjs@0.0.5/dist/bundle.js" defer></script>
 ```
 
 ### use jsdelivr link :
 ```html
-<script src="https://cdn.jsdelivr.net/npm/tocherjs@0.0.4/release/index.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/tocherjs@0.0.5/dist/bundle.js" defer></script>
 ```

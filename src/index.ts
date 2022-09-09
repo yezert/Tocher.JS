@@ -73,7 +73,7 @@ function found_t_value() {
 
 // console.log("www");
 
-function T_changevalue(valuename: any, what: any) {
+export function T_changevalue(valuename: any, what: any) {
 	t_data_list.forEach((nowda: any) => {
 		// console.log(nowda);
 		if (nowda.getAttribute("t-name") == valuename) {
@@ -87,7 +87,7 @@ function T_changevalue(valuename: any, what: any) {
 	});
 }
 
-function T_operating(valuename: any, number: any) {
+export function T_operating(valuename: any, number: any) {
 	t_data_list.forEach((nowda: any) => {
 		// console.log(nowda);
 		if (nowda.getAttribute("t-name") == valuename) {
@@ -239,6 +239,8 @@ function init() {
 	init_compenents();
 	found_t_hide();
 	found_t_if();
+	// T_changevalue("main-Tocher38230124233224243233", "0");
+	// T_operating("main-Tocher13823012423322423435653", "0");
 }
 
 window.onload = () => {
