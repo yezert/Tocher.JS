@@ -30,5 +30,5 @@ module.exports = {
 		noInterop: false,
 	},
 	sourceMaps: true,
-	minify: true,
+	minify: false,
 };

@@ -1,5 +1,5 @@
 import { found_t_map } from "./tmap";
-
+import "./classes";
 const t_data_list: NodeListOf<Element> = document.querySelectorAll("t-data");
 
 const t_components_list = document.querySelectorAll("t-components");
@@ -18,7 +18,6 @@ function init_compenents() {
 		at.style.display = "none";
 	});
 }
-
 t_data_list.forEach((x: any) => {
 	//let tcvalue = alltjs.getAttribute("tocher-value");
 	x.style.display = "none";
@@ -69,11 +68,12 @@ function found_t_value() {
 				}
 			});
 	});
+	get_components();
 }
 
 // console.log("www");
 
-export function T_changevalue(valuename: any, what: any) {
+function T_changevalue(valuename: any, what: any) {
 	t_data_list.forEach((nowda: any) => {
 		// console.log(nowda);
 		if (nowda.getAttribute("t-name") == valuename) {
@@ -87,7 +87,7 @@ export function T_changevalue(valuename: any, what: any) {
 	});
 }
 
-export function T_operating(valuename: any, number: any) {
+function T_operating(valuename: any, number: any) {
 	t_data_list.forEach((nowda: any) => {
 		// console.log(nowda);
 		if (nowda.getAttribute("t-name") == valuename) {
@@ -98,6 +98,7 @@ export function T_operating(valuename: any, number: any) {
 			// console.log(nowda.innerText);
 			found_t_value();
 			found_t_if();
+			get_components();
 		}
 	});
 	// console.log(nowda);
@@ -239,10 +240,18 @@ function init() {
 	init_compenents();
 	found_t_hide();
 	found_t_if();
-	// T_changevalue("main-Tocher38230124233224243233", "0");
-	// T_operating("main-Tocher13823012423322423435653", "0");
+	pubinit();
+}
+
+function pubinit() {
+	T_changevalue("ti", "0");
+	T_operating("ti", "0");
+	// oninput_str("0");
+	// element_onload("0");
 }
 
 window.onload = () => {
 	init();
 };
+
+// module.exports = {}
